@@ -11,7 +11,10 @@
             <a href="" id="authorize_public">Authorize and get Public data</a>
         </li>
         <li>
-            <a href="" id="authorize_email">Authorize and get Public data + email</a>
+            <a href="" id="authorize_email">Authorize and get Public data + followers</a>
+        </li>
+        <li>
+            <a href="" id="red2">Open in App</a>
         </li>
     </ul>
     <p>After testing you can Disconnect the "Barry's GitHub Examples" Application on the <a href="https://www.twitch.tv/settings/connections">Connections page</a></p>
@@ -33,6 +36,8 @@
             if (parsedHash.get('access_token')) {
                 var access_token = parsedHash.get('access_token');
                 document.getElementById('access_token').textContent = 'Your Access Key from the #url: ' + access_token;
+                
+                document.getElementById('red2').setAttribute('href', 'followermenubar://' + access_token);
 
                 document.getElementById('user_data').textContent = 'Loading';
 
