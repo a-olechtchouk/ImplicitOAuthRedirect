@@ -13,6 +13,9 @@
         <li>
             <a href="" id="authorize_email">Authorize and get Public data + email</a>
         </li>
+        <li>
+            <a href="" id="red2">Open in app</a>
+        </li>
     </ul>
     <p>After testing you can Disconnect the "Barry's GitHub Examples" Application on the <a href="https://www.twitch.tv/settings/connections">Connections page</a></p>
     <div id="access_token"></div>
@@ -26,6 +29,7 @@
 
         document.getElementById('authorize_public').setAttribute('href', 'https://id.twitch.tv/oauth2/authorize?client_id=' + client_id + '&redirect_uri=' + encodeURIComponent(redirect) + '&response_type=token');
         document.getElementById('authorize_email').setAttribute('href', 'https://id.twitch.tv/oauth2/authorize?client_id=' + client_id + '&redirect_uri=' + encodeURIComponent(redirect) + '&response_type=token&scope=user:read:email');
+        document.getElementById('red2').setAttribute('href', 'followermenubar://');
         document.getElementById('access_token').textContent = '';
 
         if (document.location.hash && document.location.hash != '') {
