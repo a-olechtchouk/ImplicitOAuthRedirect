@@ -21,7 +21,38 @@
     <div id="access_token"></div>
     <div id="user_data"></div>
 
+    <!-- <script>
+    function getURL() {
+        alert("The URL of this page is: " + window.location.href);
+    }
+    </script>
+     
+    <button type="button" onclick="getURL();">Get Page URL</button> -->
+
+    <script>
+    function getURL2() {
+        // alert("The URL of this page is: " + window.location.hash);
+        // let hash = "myschemecoolapp:" + window.location.hash;
+        let hash = "myschemecoolapp://twitchauth" + window.location.hash;
+        // let hash = "https://myschemecoolapp:" + window.location.hash;
+        // https://
+        // let hash = "123:"
+
+        // alert("redirecting to: " + hash);
+        // window.location.replace("http://stackoverflow.com");
+        // window.location.replace(hash);
+        window.location.href = hash;
+    }
+    </script>
+     
+    <button type="button" onclick="getURL2();">hash redir</button>
+
     <script type="text/javascript">
+
+        // similar behavior as an HTTP redirect
+        // window.location.replace("http://stackoverflow.com");
+
+
         // These are set for the GitHub Pages Example
         // Substitute as needed
         var client_id = 'di4mabsewb9cuvgz18xy9x4o8bbr0q';
@@ -32,7 +63,9 @@
         document.getElementById('access_token').textContent = '';
 
         if (document.location.hash && document.location.hash != '') {
-            var parsedHash = new URLSearchParams(window.location.hash.slice(1));
+            // var parsedHash = new URLSearchParams(window.location.hash.slice(1));
+            var parsedHash = new URLSearchParams(window.location.hash);
+            console.log(parsedHash);
             if (parsedHash.get('access_token')) {
                 var access_token = parsedHash.get('access_token');
                 document.getElementById('access_token').textContent = 'Your Access Key from the #url: ' + access_token;
